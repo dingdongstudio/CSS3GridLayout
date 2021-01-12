@@ -1,0 +1,305 @@
+@charset "UTF-8";
+@import url(//cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+	margin: 0;
+	font-family: 'NanumSquare', sans-serif;
+}
+
+/* 기본 */
+
+.post * {
+	margin: 0;
+}
+
+.post img {
+	width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+
+/* 그리드 */
+.post {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(12, 1fr);
+	grid-column-gap: 40px;
+	padding: 0 30px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 16px;
+}
+
+
+/* 제목  */
+.post-title {
+	grid-column: 1 / 5;
+	grid-row: 1 / 3;
+	align-self: center;
+	z-index: 10;
+	font-size: 2.8125em;
+	font-weight: 900;
+	line-height: 1.2;
+}
+
+/* 부제 */
+.post-sub {
+	grid-column: 1 / -1;
+	grid-row: 2;
+	color: #ddd;
+	font-family: 'NanumSquare', sans-serif;
+	font-size: 3.375em;
+	font-weight: 900;
+	letter-spacing: 0.14em;
+	line-height: 1;
+}
+
+/* 일자 */
+.post-date {
+	grid-column: 5;
+	grid-row: 2;
+	justify-self: end;
+	font-family: 'NanumSquare', sans-serif;
+	font-size: 0.875em;
+}
+
+/* 리드문장 */
+.post-lead {
+	grid-column: 1 / 3;
+	grid-row: 3 / 5;
+	font-size: 0.9375em;
+	font-weight: 700;
+	line-height: 1.8;
+}
+
+/* 문장1 */
+.post-text01 {
+	grid-column: 1 / 3;
+	grid-row: 5 / 9;
+	font-size: 0.75em;
+	font-weight: 200;
+	line-height: 2;
+	text-align: justify;
+	text-justify: inter-ideograph;
+}
+
+/* 이미지1 */
+.post-fig01 {
+	grid-column: 3 / 6;
+	grid-row: 3 / 7;
+	margin-right: -30px;
+}
+
+.post-fig01 img {
+	height: 100%;
+	object-fit: cover;
+}
+
+/* 카피라이트 */
+.post-catch {
+	grid-column: 3 / 6;
+	grid-row: 7;
+	justify-self: center;
+	align-self: center;
+	margin-left: 30px;
+	font-size: 1.25em;
+	line-height: 1.5;
+	text-align: center;
+	quotes: '“' '”';
+	display: grid;
+	grid-auto-flow: column;
+	grid-column-gap: 5px;
+}
+
+.post-catch::before {
+	content: open-quote;
+}
+
+.post-catch::after {
+	content: close-quote;
+}
+
+.post-catch::before,
+.post-catch::after {
+	color: #aaa;
+	font-size: 2em;
+	font-weight: 900;
+}
+
+
+/* 문장2 */
+.post-text02 {
+	grid-column: 3 / 5;
+	grid-row: 8 / 13;
+	font-size: 0.75em;
+	font-weight: 200;
+	line-height: 2;
+	text-align: justify;
+	text-justify: inter-ideograph;
+}
+
+/* 이미지2 */
+.post-fig02 {
+	grid-column: 1 / 3;
+	grid-row: 9 / 13;
+	align-self: center;
+}
+
+.post-fig02 figcaption {
+	font-size: 0.625em;
+	font-weight: 500;
+}
+
+/* 소셜네트워크 메뉴 */
+.post-sns {
+	grid-column: 5;
+	grid-row: 8 / 13;
+	justify-self: end;
+	align-self: center;
+}
+
+.post-sns ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	grid-row-gap: 10px;
+}
+
+.post-sns a {
+	font-size: 1.5em;
+	color: #aaa;
+	text-decoration: none;
+	text-align: center;
+	border: solid 1px #aaa;
+	border-radius: 50%;
+	display: block;
+	width: 2em;
+	height: 2em;
+	line-height: 2em;
+}
+
+
+
+/* 마크이미지 */
+.post::after {
+	grid-column: 2 / 4;
+	grid-row: 4 / 6;
+	justify-self: center;
+	align-self: center;
+	width: 5.375em;
+	height: 5.375em;
+	content: url(https://redev.kr/bg/anchor.png);
+	opacity: 0.15;
+}
+
+
+/* 화면너비 1000px이상일 경우 */
+@media (min-width: 1000px) {
+
+	.post {
+		width: 1000px;
+		box-sizing: border-box;
+		margin: auto;
+		font-size: 20px;
+	}
+
+}
+
+
+/* 화면너비 769~999px사이일 경우 */
+@media (min-width: 769px) and (max-width: 999px) {
+	.post {
+		font-size: calc(16px + 4 * (100vw - 768px) / 232);
+	}
+}
+
+
+/* 화면너비 767px 이하 */
+@media (max-width: 767px) {
+
+	.post {
+		grid-template-columns: none;
+		grid-template-rows: none;
+		grid-row-gap: 20px;
+		padding: 20px;
+		font-size: 14.4px;
+	}
+
+	.post > *,
+	.post::after {
+		grid-column: auto;
+		grid-row: auto;
+	}
+
+
+	/* 제목 */
+	.post-title {
+		grid-column: 1;
+		grid-row: 1;
+		word-break: keep-all;
+	}
+
+	/* 마크이미지 */
+	.post::after {
+		grid-column: 1;
+		grid-row: 1;
+		justify-self: end;
+		margin-bottom: -20px;
+	}
+
+	/* 부제 */
+	.post-sub {
+		grid-column: 1;
+		grid-row: 2;
+		font-size: 24px;
+	}
+
+	/* 일자 */
+	.post-date {
+		grid-column: 1;
+		grid-row: 2;
+		align-self: end;
+	}
+
+	/* 리드문장 */
+	.post-lead {
+		font-size: 16px;
+	}
+
+	/* 이미지1 */
+	.post-fig01 {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+
+	/* 카피라이트 */
+	.post-catch {
+		margin-left: 0;
+		margin-top: -35px;
+		justify-self: end;
+		background: rgba(255,255,255,0.6);
+		box-shadow: 0 0 10px 10px rgba(255,255,255,0.6);
+		border-radius: 10px;
+	}
+
+	/* 문장1, 문장2 */
+	.post-text01,
+	.post-text02 {
+		font-size: 15px;
+	}
+
+	/* 소셜네트워크 메뉴 */
+	.post-sns {
+		justify-self: center;
+	}
+
+	.post-sns ul {
+		grid-auto-flow: column;
+		grid-column-gap: 20px;
+	}
+
+}
+
+

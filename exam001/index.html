@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>매거진 스타일 레이아웃 by Dingdong Studio</title>
+<meta name="viewport" content="width=device-width">
+
+<script src="https://kit.fontawesome.com/f99eb211a7.js" crossorigin="anonymous"></script> 
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+<article class="post">
+
+	<h1 class="post-title">2021년<wbr> 여행 트렌드</h1>
+	<p class="post-sub">2021 TRIP TREND</p>
+	<time class="post-date" datetime="2021-01-12">
+		<span class="far fa-calendar-alt"></span> 2021/01/12
+	</time>
+
+	<p class="post-lead">내년엔 여행갈 수 있을까? 부킹닷컴과 에어비앤비가 설문조사와 데이터를 토대로 예측한 2021년 여행 트렌드를 소개한다.</p>
+
+	<figure class="post-fig01">
+		<img src="assets/images/winter.jpg" alt="겨울스포츠 - 스노우보드">
+	</figure>
+
+	<p class="post-catch">
+	하얀 설원이 펼쳐진 리조트의<br>
+	긴 슬로프를 라이딩해보며 행복을 느끼자!
+	</p>
+
+	<div class="post-text01">
+		<p><strong>솔로 여행</strong></p>
+		<p>2021년에는 오랜 사회적 거리두기 기간으로 인해 지친 심신을 달래고자 솔로 여행을 떠나는 이들이 많아질 것으로 예상된다. 실제로 코로나19 이후 ‘홀로 여행을 떠날 계획’이라고 답한 한국인 응답자가 42%(글로벌 30%)를 차지했는데, 팬데믹 이전(15%; 글로벌 17%)에 비해 두배 이상 증가해 눈길을 끌었다. 또, 응답자의 43%(글로벌 42%)는 ‘잃어버린 2020년에 대한 보상을 받기 위한 방안으로 여행을 더 많이 하고 싶다’는 뜻을 밝혀 앞으로 부푼 꿈을 안고 세계를 여행하는 솔로 여행객들이 증가할 것으로 보인다.</p>
+	</div>
+
+	<figure class="post-fig02">
+		<img src="assets/images/sboard.jpg" alt="겨울스포츠 - 스노우보더">
+		<figcaption>프리스타일 스노우보더  <br>
+		스노보드는 데크와 바인딩, 부츠는 필수 아이템입니다.</figcaption>
+	</figure>
+
+	<div class="post-text02">
+		<p><strong>릴랙스+럭셔리=릴랙셔리</strong></p>
+		<p>올해 전례 없는 코로나19 상황으로 여행객들의 발이 묶이면서 앞으로 여행은 일상이 아닌 ‘럭셔리’가 될 것으로 예상된다. 실제로 과반 이상(50%)의 한국인 응답자(글로벌 61%)가 ‘앞으로 여행을 당연하게 여기지 않을 것’이라고 답한 만큼, 여행은 삶 속에 특별한 요소로 자리잡을 가능성이 높아진 것으로 보인다. 한국인 응답자의 경우 약 63%(글로벌 51%)가 ‘일상을 벗어나 쉴 수 있는 여행을 계획하고 있다’고 말해 ‘릴랙스’하며 쉴 수 있는 여행이 진정한 ‘럭셔리’로 여겨질 것이라는 전망이다.</p>
+		<p><strong>주말 여행</strong></p>
+		<p>해외 여행이 어려워짐에 따라, 주말을 이용해 짧은 여행을 떠나는 사람들이 전세계적으로 증가할 것으로 전망된다. 한국의 경우, 응답자의 절반(50%; 글로벌 53%)이 ‘2019년에 비해 더욱 짧은 일정으로 여행을 떠나겠다’고 밝히며 내년에도 해외 보다는 국내여행에 관심이 더 쏠릴 것으로 보인다. 이외에도, 한국인 응답자의 35%(글로벌 28%)가 ‘여행 제한이 완화된 이후 첫 여행을 주말을 활용해 가겠다’고 답해 단 며칠만이라도 복잡한 일상에서 탈출하고자 하는 욕구가 있는 것으로 드러났다.</p>
+	</div>
+
+	<aside class="post-sns">
+	<ul>
+	<li><a href="#">
+		<span class="fab fa-twitter" title="트위터"></span>
+	</a></li>
+	<li><a href="#">
+		<span class="fab fa-facebook-f" title="구글"></span>
+	</a></li>
+	<li><a href="#">
+		<span class="fab fa-instagram" title="인스타그램"></span>
+	</a></li>
+	</ul>
+	</aside>
+
+</article>
+
+
+<script>
+var ua = window.navigator.userAgent.toLowerCase();
+
+if(ua.indexOf('safari') != -1 && ua.indexOf('version/10') != -1) {
+
+var imgs = document.querySelectorAll('.post-fig01 img');
+
+var imgs = Array.prototype.slice.call(imgs,0);
+
+imgs.forEach(function(value, index, array) {
+	var imgurl = value.src;
+	var fig = value.parentNode;
+	fig.style.backgroundImage = 'url(' + imgurl + ')';
+	fig.style.backgroundSize = 'cover';
+	fig.style.backgroundPosition = 'center';
+	fig.style.minHeight = '250px';
+	value.style.display = 'none';
+});
+
+}
+</script>
+
+</body>
+</html>
